@@ -11,7 +11,7 @@ function favProduct(name, image, price) {
         <div class="fav-name"><p>${name}</p></div>
         <div class="fav-price">Price: ₦${price}</div>
         <div class="fav-cta">
-          <button class="cta-gold">Order</button>
+          <button class="cta-gold">Add to Cart</button>
         </div>
       </div>
     </div>

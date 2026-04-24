@@ -27,6 +27,6 @@ export const favItems = [
   {
     name: "White Rice with Beef Stew",
     price: "4000",
-    image: "/fav img/Beef stew.jfif",
+    image: "fav img/Beef stew.jfif",
   },
 ];
