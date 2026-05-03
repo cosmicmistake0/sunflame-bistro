@@ -438,7 +438,7 @@ textarea {
   border: none;
   /* background-color: var(--primary-color); */
   border-radius: 0 0.5rem 0 0.5rem;
-  padding: 0.2rem;
+  padding: 0.8rem;
   transition: all 0.2s ease;
 }
 .form-container input,
@@ -454,5 +454,92 @@ textarea:hover {
   color: var(--primary-color);
 }
 .contact-body header {
-  margin-bottom: 1rem;
+  background-color: var(--primary-color);
+  padding-bottom: 0.4rem;
+}
+/* apply for job styling */
+
+.job-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding: 1rem;
+}
+.job-hero h1 {
+  font-size: var(--fs-2xl);
+}
+.job-hero .hire-image {
+  border: var(--primary-color) solid 2px;
+  height: 9rem;
+  border-radius: 0 0.5rem 0 0.5rem;
+}
+.job-hero .hire-image img {
+  border-radius: 0 0.5rem 0 0.5rem;
+}
+.our-values {
+  display: grid;
+  grid-template-areas:
+    "txt txt"
+    "arrow list";
+}
+.values-text {
+  grid-area: txt;
+}
+.values-arrow {
+  grid-area: arrow;
+}
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  grid-area: list;
+  padding-left: 3rem;
+}
+.values-list p::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  width: 2rem;
+  height: 2rem;
+  background: url(images/goldbell.svg) no-repeat center/contain;
+}
+.values-list p {
+  /* font-size: var(--fs-xl); */
+}
+.job-hero {
+  background-color: var(--secondary-color);
+  color: white;
+}
+.job-text h1 {
+  color: var(--primary-color);
+}
+.values-text h2 {
+  color: var(--primary-color);
+  font-family: "Calligraffitti", sans-serif;
+}
+.job-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem;
+}
+.job-form-container input,
+textarea {
+  transition: all 0.2s ease;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  outline: none;
+  border: none;
+  resize: none;
+  padding: 0.6rem;
+  border-radius: 0 0.5rem 0 0.5rem;
+}
+.job-form-container textarea {
+  height: 10rem;
+}
+.job-form-container input:hover,
+.job-form-container textarea:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08);
 }
