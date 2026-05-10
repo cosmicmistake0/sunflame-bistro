@@ -183,7 +183,8 @@ img {
 }
 /* fav section */
 
-.fav-card {
+.fav-card,
+.menu-card {
   justify-content: space-between;
   text-align: center;
   color: white;
@@ -202,20 +203,23 @@ img {
   grid-template-columns: 1fr 1fr;
   margin-bottom: 2rem;
 }
-.fav-image {
+.fav-image,
+.menu-image {
   width: 100%;
-  height: 8rem;
+  height: 5rem;
   border: var(--primary-color) 2px solid;
   border-radius: 0 0.5rem 0 0.5rem;
 }
-.fav-image img {
+.fav-image img,
+.menu-image img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 
   border-radius: 0 0.5rem 0 0.5rem;
 }
-.fav-cta .cta-gold {
+.fav-cta .cta-gold,
+.menu-cta .cta-gold {
   color: white;
   width: 100%;
   padding: 0.2rem;
@@ -226,13 +230,16 @@ img {
   width: 100%;
   background-color: var();
 }
-.fav-price {
+.fav-price,
+.menu-price {
   color: var(--primary-color);
 }
-.fav-name p {
+.fav-name p,
+.menu-name p {
   font-size: var(--fs-sm);
 }
-.fav-text {
+.fav-text,
+.menu-text {
   height: 100%;
 
   display: flex;
@@ -264,8 +271,6 @@ img {
 .card h2 {
   font-family: "Calligraffitti", sans-serif;
   color: var(--primary-color);
-}
-.hire {
 }
 
 .hire-container {
@@ -545,4 +550,50 @@ textarea {
 }
 .job-body header {
   margin-bottom: 1rem;
+}
+/* menu */
+.hero-menu {
+  margin-top: 0.4rem;
+  padding: 1rem;
+  background: url(images/hero\ img2.jfif);
+  position: relative;
+  content: "";
+  aspect-ratio: 2/1;
+  background-size: cover;
+  background-position: 20%;
+}
+.hero-menu-text {
+  position: absolute;
+  color: var(--primary-color);
+  font-family: "Calligraffitti", sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-menu-text p {
+  font-size: var(--fs-3xl);
+  font-weight: 900;
+}
+.tabs button {
+  font-size: var(--fs-sm);
+  padding: 0;
+  height: 2rem;
+
+  width: 6rem;
+}
+.tabs {
+  /* background-color: var(--primary-color); */
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.6rem;
+  width: 100%;
+
+  justify-items: center;
+}
+.menu-items-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
 }
