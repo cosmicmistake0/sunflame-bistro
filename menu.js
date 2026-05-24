@@ -1,6 +1,7 @@
 import { menuItems } from "./menuitems.js";
-
-function menuProduct(name, image, price) {
+import { cart } from "./cart.js";
+import { addToCart } from "./cart.js";
+function menuProduct(name, image, price, id) {
   return `
      <div class="menu-card">
             <div class="menu-image">
@@ -15,19 +16,38 @@ function menuProduct(name, image, price) {
               <div class="menu-price">Price: ₦${price}</div>
 
               <div class="menu-cta">
-                <button class="cta-gold">Add to Cart</button>
+                <button class="cta-gold add-to-cart" data-product-id="${id}">Add to Cart</button>
               </div>
             </div>
           </div>
   `;
 }
+
 function render(products = []) {
   const menuDom = document.querySelector(".menu-items-container");
   menuDom.innerHTML = products
-    .map((p) => menuProduct(p.name, p.image, p.price))
+    .map((p) => menuProduct(p.name, p.image, p.price, p.id))
     .join("");
+
+  // add to cart button
+
+  document.querySelectorAll(".add-to-cart").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.productId;
+      addToCart(productId);
+
+      let cartQuantity = 0;
+      cart.forEach((item) => {
+        cartQuantity += item.quantity;
+      });
+      console.log(cartQuantity);
+      console.log(cart);
+    });
+  });
 }
+
 render(menuItems);
+console.log("js running");
 // for filter
 
 let filterValue = "";
@@ -65,3 +85,4 @@ dessert.addEventListener("click", () => filterType("dessert"));
 
 snacks.addEventListener("click", () => filterType("snacks"));
 all.addEventListener("click", () => render(menuItems));
+// checkout page

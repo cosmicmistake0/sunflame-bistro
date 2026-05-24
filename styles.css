@@ -597,3 +597,62 @@ textarea {
   gap: 1rem;
   padding: 1rem;
 }
+/* checkout */
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+}
+.item {
+  border-radius: 0.2rem;
+  gap: rem;
+  color: var(--secondary-color);
+  font-size: var(--fs-sm);
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem;
+  background-color: var(--primary-color);
+  display: flex;
+}
+.image-checkout {
+  border-radius: 0.4rem;
+  width: 2.5rem;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 7px;
+  aspect-ratio: 1/1;
+  border: var(--secondary-color-dark) solid 1px;
+}
+.image-checkout img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+}
+.name-checkout {
+  display: grid;
+  width: 8rem;
+}
+.name-checkout h2 {
+  font-size: var(--fs-sm);
+}
+.quantity,
+.delete-checkout {
+  padding: 0.3rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 7px;
+  height: 4rem;
+  width: 2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.3rem;
+  align-items: center;
+  justify-content: center;
+}
+.quantity p {
+  font-size: var(--fs-sm);
+}
+.quantity button,
+.delete-checkout button {
+  background-color: transparent;
+  border: none;
+}

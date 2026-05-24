@@ -1,8 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script type='module' src='checkout.js'></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,11 +18,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-
-    <title>About Sunflame Bistro</title>
+   
   </head>
-
-  <body class="about">
+  <body>
     <header>
       <nav>
         <div class="menu">
@@ -34,49 +34,28 @@
         </div>
       </nav>
     </header>
-    <div>
-      <div class="hero-container">
-        <span class="about-headings">About Us</span>
-
-        <div class="about-hero-image">
-          <img src="images/chef.jpg" alt="" />
+    <main>
+      <div class="shopping-cart">
+        <div class="item">
+          <div class="image-checkout">
+            <img src="menu img/Burger.jfif" alt="" />
+          </div>
+          <div class="name-checkout"><h2>Chicken Burger</h2></div>
+          <div class="totPrice">₦5000</div>
+          <div class="quantity">
+            <button>+</button>
+            <p>3</p>
+            <button>-</button>
+          </div>
+          <div class="delete-checkout"><button>x</button></div>
         </div>
-
-        <span class="about-headings">Our Story</span>
-        <p>
-          Sunflame Bistro was built from a simple love for good food and good
-          company. We wanted to create a place where people can relax, eat well,
-          and feel at home — whether they’re coming in for a quick meal or
-          spending time with friends and family.
-        </p>
+      
+      
       </div>
-    </div>
-
-    <div class="about-body-1st-block">
-      <div class="first-image">
-        <img src="images/restaurant image.jfif" alt="" />
-      </div>
-
-      <p>
-        <span class="about-headings">What We Serve</span>
-        Our kitchen is all about fresh ingredients, bold flavours, and meals
-        made with care. From comforting favourites to signature dishes,
-        everything is prepared to make sure every bite feels worth it. We keep
-        it simple, tasty, and satisfying.
-      </p>
-    </div>
-
-    <div class="about-body-2nd-block">
-      <img src="images/vishwas-katti-UrQ_BS9bLXQ-unsplash.jpg" alt="" />
-
-      <span class="about-headings">The Experience</span>
-      <p>
-        At Sunflame Bistro, it’s more than food — it’s feeling welcome. Warm
-        service, a relaxed vibe, and shared moments make you stay for the
-        experience, not just the meal.
-      </p>
-    </div>
-    <footer>
+      <div class="checkout">
+        <button class="cta-gold">checkout</button>
+    </main>
+     <footer>
       <div class="footer-container">
         <button class="cta-green">Order Online</button>
         <p>Get in Touch</p>

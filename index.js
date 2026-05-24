@@ -18,7 +18,7 @@ function favProduct(name, image, price) {
   `;
 }
 
-function render(products = []) {
+export function render(products = []) {
   const favDom = document.querySelector(".fav-product-list");
 
   favDom.innerHTML = products
