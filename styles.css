@@ -135,6 +135,17 @@ img {
   top: 0;
   right: 0;
 } */
+.links-header {
+  display: none;
+}
+.links-header ul {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+}
+.links-header a {
+  width: 7rem;
+}
 .hero-image img {
   filter: blur(1px);
   display: none;
@@ -159,6 +170,7 @@ img {
   display: flex;
   flex-direction: row;
 }
+
 .cta-green {
   background-color: var(--secondary-color-dark);
   padding: 0.6rem;
@@ -275,6 +287,7 @@ img {
 
 .hire-container {
   display: flex;
+
   flex-direction: column;
 }
 .hire-image {
@@ -342,6 +355,8 @@ img {
   color: var(--secondary-color-dark);
 }
 .about .hero-container {
+  margin-top: 1rem;
+  background-color: var(--primary-color);
   color: var(--secondary-color-dark);
 
   padding: 1rem;
@@ -350,31 +365,28 @@ img {
 }
 
 .about-hero-image img {
-  border-radius: 0 0.5rem 0 0.5rem;
   width: 100%;
 }
+
 .about-body-1st-block {
   gap: 1rem;
-  grid-template-rows: 1fr 1fr;
+
   display: grid;
   padding: 1rem;
-  justify-content: space-between;
+
+  background-color: var(--primary-color);
 }
-.about-body-1st-block p {
-  display: flex;
-  flex-direction: column;
-}
+
 .first-image {
-  border-radius: 0 0.5rem 0 0.5rem;
   overflow: hidden;
 
   width: 100%;
 }
 .first-image img {
   width: 100%;
-  border-radius: 0 0.5rem 0 0.5rem;
+
   aspect-ratio: 1/0.6;
-  border: var(--secondary-color) solid 2px;
+
   object-fit: cover;
 }
 .about-body-2nd-block {
@@ -384,7 +396,6 @@ img {
   flex-direction: column;
 }
 .about-body-2nd-block img {
-  border-radius: 0 0.5rem 0 0.5rem;
 }
 .about-body-2nd-block .about-headings {
   background-color: var(--primary-color);
@@ -395,7 +406,7 @@ img {
 }
 .about-headings {
   color: var(--primary-color);
-
+  height: 3rem;
   border-radius: 0 0.5rem 0 0.5rem;
   display: block;
   font-family: "Calligraffitti", sans-serif;
@@ -433,8 +444,7 @@ img {
   flex-direction: column;
   gap: 0.4rem;
 }
-.form-container input,
-textarea {
+.form-container input {
   outline: none;
   color: var(--secondary-color);
   resize: none;
@@ -446,12 +456,14 @@ textarea {
   padding: 0.8rem;
   transition: all 0.2s ease;
 }
-.form-container input,
+.form-container input:hover,
 textarea:hover {
   transform: translateY(-2px);
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08);
 }
 .form-container textarea {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
   height: 10rem;
 }
 .form-container button {
@@ -528,6 +540,10 @@ textarea:hover {
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
+  background-color: var(--primary-color);
+}
+.job-body {
+  background-color: var(--primary-color);
 }
 .job-form-container input,
 textarea {
@@ -581,6 +597,11 @@ textarea {
 
   width: 6rem;
 }
+
+.tabs button:focus {
+  background-color: var(--primary-color);
+  color: white;
+}
 .tabs {
   /* background-color: var(--primary-color); */
   padding: 1rem;
@@ -606,7 +627,7 @@ textarea {
 }
 .item {
   border-radius: 0.2rem;
-  gap: rem;
+
   color: var(--secondary-color);
   font-size: var(--fs-sm);
   justify-content: space-between;
@@ -639,9 +660,9 @@ textarea {
 .quantity,
 .delete-checkout {
   padding: 0.3rem;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 7px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 5px;
   height: 4rem;
-  width: 2rem;
+  width: 1.5rem;
   display: flex;
   flex-direction: column;
   border-radius: 0.3rem;
@@ -655,4 +676,313 @@ textarea {
 .delete-checkout button {
   background-color: transparent;
   border: none;
+}
+.subtotal-container {
+  padding: 1rem;
+}
+.subtotal {
+  border-top: var(--primary-color) 2px solid;
+  font-weight: 700;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--secondary-color);
+}
+.checkout-btn-container {
+  padding: 1rem;
+}
+
+.footer-checkout {
+  margin-top: 4rem;
+}
+@media (min-width: 420px) {
+  .footer-container {
+    grid-template-areas:
+      "logo ."
+      "link contact"
+      "socials .";
+  }
+
+  .contact {
+    text-align: right;
+    align-items: end;
+  }
+}
+
+@media (min-width: 600px) {
+  html body p {
+    font-size: 1.125rem;
+  }
+  :root {
+    --h1-font: 3rem;
+    --h2-font: 2rem;
+    --body-font: 1.125rem;
+  }
+
+  #about-section {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .bar {
+    display: none;
+  }
+  #about-values {
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "one one two two"
+      "three three three three"
+      "button button button button";
+    grid-template-rows: auto 1fr auto;
+  }
+  .value1 {
+    height: 100%;
+    grid-area: one;
+  }
+  .value2 {
+    height: 100%;
+    grid-area: two;
+  }
+  .value3 {
+    grid-area: three;
+  }
+  .valuebtn {
+    grid-area: button;
+  }
+  .featured-work-gallery {
+    justify-content: space-between;
+    gap: 2rem;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+  .work-card {
+    max-width: 30rem;
+  }
+  #what-we-do {
+    background-color: var(--highlight-color);
+    align-items: center;
+    display: grid;
+    grid-template-areas: "txt cards  ";
+    grid-template-columns: 42% 58%;
+  }
+  .what-we-do-container {
+    grid-template-rows: 6rem 6rem 8rem;
+    grid-area: cards;
+  }
+  .what-we-do-text {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+    padding-left: 2rem;
+    grid-area: txt;
+  }
+
+  .what-we-do-text h2 {
+    width: 100%;
+
+    text-align: left;
+  }
+  .contact-block {
+    max-height: 5rem;
+  }
+  #testimonial {
+    background-color: var(--highlight-color);
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row;
+  }
+  .testimonial-text {
+    text-align: left;
+    justify-content: start;
+  }
+  .testimonial-text p {
+    width: 100%;
+  }
+  .container {
+    position: relative;
+    width: 60%;
+  }
+  /* .testimonial-slider-control {
+    position: absolute;
+    display: block;
+
+    width: 5rem;
+    height: 5rem;
+    bottom: 0;
+    left: 50%;
+  }
+  .swiper-button-prev {
+    position: absolute;
+    display: block;
+  }
+  .swiper-button-next {
+    position: absolute;
+    display: block;
+  } */
+}
+@media (min-width: 480px) {
+  .quantity,
+  .delete-checkout {
+    width: 2.5rem;
+    height: 4.5rem;
+  }
+  .image-checkout {
+    width: 4.5rem;
+  }
+  .item {
+    padding: 1rem;
+  }
+  .about-hero-image {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+  }
+  .about-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+  .first-image {
+    height: 15rem;
+  }
+  .second-image {
+    width: 100%;
+    height: 15rem;
+    overflow: hidden;
+  }
+}
+@media (min-width: 750px) {
+  :root {
+    --fs-xs: 0.8rem;
+    --fs-sm: 0.9rem;
+    --fs-base: 1.22rem;
+    --fs-md: 1.13rem;
+    --fs-lg: 1.3rem;
+    --fs-xl: 2rem;
+    --fs-2xl: 2rem;
+    --fs-3xl: 3rem;
+  }
+  .fav-image,
+  .menu-image {
+    height: 8.5rem;
+  }
+  .hire-image {
+    height: 24rem;
+  }
+  .job-hero .hire-image {
+    height: 25rem;
+  }
+  .hire-text {
+    gap: 1.4rem;
+    height: 17rem;
+  }
+  #reason {
+    height: 20rem;
+  }
+  .hire-text button {
+    height: 3rem;
+  }
+  .name-checkout {
+    width: 10rem;
+  }
+
+  .quantity,
+  .delete-checkout {
+    width: 2.5rem;
+    height: 5rem;
+  }
+  .image-checkout {
+    width: 5rem;
+  }
+  .item {
+    padding: 1rem;
+  }
+  .values-arrow {
+    max-width: 15rem;
+  }
+  .checkout-btn-container button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+  }
+}
+@media (min-width: 1000px) {
+  .links-header {
+    display: flex;
+    width: 100%;
+  }
+
+  .about-body-container {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-areas:
+      "one two"
+      "three three";
+  }
+  .hero-container {
+    grid-area: one;
+  }
+  .hero-menu {
+    height: 20rem;
+    width: 100%;
+  }
+  .about-body-1st-block {
+    grid-area: two;
+
+    padding-top: 2rem;
+  }
+  .about-body-2nd-block {
+    grid-area: three;
+    height: auto;
+  }
+  .about-hero-image {
+    width: 100%;
+    height: 16rem;
+    overflow: hidden;
+  }
+  .about-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+  }
+  .first-image {
+    height: 16rem;
+  }
+  .fav-product-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .menu-items-container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .job-text {
+    padding-bottom: 5rem;
+  }
+  .values-arrow {
+    max-width: 17rem;
+  }
+  .form-container {
+    border-radius: 0.5rem;
+    margin: 2rem;
+    padding: 1rem 5rem;
+    border: var(--primary-color) solid;
+  }
+
+  .job-form-container {
+    /* background-color: var(--secondary-color); */
+    padding: 1rem 5rem;
+    border: var(--secondary-color) solid;
+    border-radius: 0.5rem;
+    margin: 2rem;
+  }
+  /* .job-form-container input,
+  textarea {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  } */
+}
+
+@media (min-width: 1028px) {
 }

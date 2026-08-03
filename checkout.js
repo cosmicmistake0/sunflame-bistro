@@ -6,6 +6,7 @@ import {
 } from "./cart.js";
 import { menuItems } from "./menuitems.js";
 let shoppingCart = "";
+let subTotal = 0;
 
 cart.forEach((cartItem) => {
   console.log(cartItem.productId);
@@ -17,9 +18,12 @@ cart.forEach((cartItem) => {
       matchingProduct = product;
     }
   });
-  function saveToStorage() {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
+
+  // let totPrice;
+
+  // totPrice = cartItem.quantity * matchingProduct.price;
+  // subTotal += totPrice;
+  updateSubtotal();
   console.log("cart product id:", productId);
   console.log("matching product:", matchingProduct);
   shoppingCart += `
@@ -62,6 +66,7 @@ cart.forEach((cartItem) => {
   </div>
 `;
 });
+console.log(`${subTotal}  this is it`);
 document.querySelector(".shopping-cart").innerHTML = shoppingCart;
 console.log(shoppingCart);
 document.querySelectorAll(".delete-item").forEach((button) => {
@@ -71,6 +76,7 @@ document.querySelectorAll(".delete-item").forEach((button) => {
     console.log(cart);
     const container = document.querySelector(`.item-container-${productId}`);
     container.remove();
+    updateSubtotal();
   });
 });
 document.querySelectorAll(".add-quantity").forEach((button) => {
@@ -84,6 +90,7 @@ document.querySelectorAll(".add-quantity").forEach((button) => {
     const quantityElement = document.querySelector(`.quantity-${productId}`);
 
     quantityElement.textContent = item.quantity;
+    updateSubtotal();
   });
 });
 document.querySelectorAll(".subtract-quantity").forEach((button) => {
@@ -95,5 +102,22 @@ document.querySelectorAll(".subtract-quantity").forEach((button) => {
     const quantityElement = document.querySelector(`.quantity-${productId}`);
 
     quantityElement.textContent = item.quantity;
+    updateSubtotal();
   });
 });
+cart.forEach((item) => {
+  item.quantity;
+});
+export function updateSubtotal() {
+  let subTotal = 0;
+
+  cart.forEach((cartItem) => {
+    const matchingProduct = menuItems.find((product) => {
+      return product.id === cartItem.productId;
+    });
+
+    subTotal += cartItem.quantity * matchingProduct.price;
+  });
+
+  document.querySelector(".subtotal-number").textContent = `₦${subTotal}`;
+}

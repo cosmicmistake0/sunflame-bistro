@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script type='module' src='checkout.js'></script>
+   
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -21,12 +21,22 @@
    
   </head>
   <body>
-    <header>
+   <header>
       <nav>
-        <div class="menu">
-          <a href=""><img src="icons/menu-svgrepo-com.svg" alt="" /> </a>
-        </div>
+      
         <div class="logo"><img src="images/Sunflame Logo.png" alt="" /></div>
+          <div class="menu">
+           <div class="links-header">
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+             <li><a href="menu.html"> Menu</a></li>
+          <li> <a href="contactUs.html">Contact us</a></li> 
+           
+           
+          </ul>
+        </div>
+          <!-- <a href=""><img src="icons/menu-svgrepo-com.svg" alt="" /> </a> -->
+        </div>
         <div class="cart">
           <a href="checkout.html"
             ><img src="icons/cart-shopping-svgrepo-com.svg" alt=""
@@ -52,10 +62,15 @@
       
       
       </div>
-      <div class="checkout">
+       <div class="subtotal-container"> <div class="subtotal"> 
+          <p>subtotal:</p>
+          <p class='subtotal-number'></p>
+        </div></div>
+      <div class="checkout-btn-container">
         <button class="cta-gold">checkout</button>
+       
     </main>
-     <footer>
+     <footer class='footer-checkout'>
       <div class="footer-container">
         <button class="cta-green">Order Online</button>
         <p>Get in Touch</p>
@@ -125,5 +140,6 @@
         </div>
       </div>
     </footer>
+     <script type='module' src='checkout.js'></script>
   </body>
 </html>

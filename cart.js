@@ -5,6 +5,7 @@ if (!cart) {
     { productId: "icecream-01", quantity: 3 },
   ];
 }
+
 function saveToStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
@@ -20,7 +21,7 @@ export function increaseQuantity(productId) {
 export function decreaseQuantity(productId) {
   const item = cart.find((cartItem) => cartItem.productId === productId);
 
-  if (item) {
+  if (item && item.quantity > 1) {
     item.quantity -= 1;
   }
 
