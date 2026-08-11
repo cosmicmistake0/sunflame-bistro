@@ -39,6 +39,11 @@ function render(products = []) {
     button.addEventListener("click", () => {
       const productId = button.dataset.productId;
       addToCart(productId);
+      button.textContent = "ADDED";
+
+      setTimeout(() => {
+        button.textContent = "Add to Cart";
+      }, 700);
 
       let cartQuantity = 0;
       cart.forEach((item) => {

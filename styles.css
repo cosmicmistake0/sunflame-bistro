@@ -206,10 +206,24 @@ img {
   background-color: var(--primary-color);
   color: white;
 }
+
+.cta-green:active {
+  background-color: var(--primary-color);
+  color: white;
+  transform: scale(1.03);
+}
+
 .cta-gold:hover {
   background-color: var(--primary-color);
   color: white;
   border: var(--primary-color) solid 2px;
+}
+
+.cta-gold:active {
+  background-color: var(--primary-color);
+  color: white;
+  border: var(--primary-color) solid 2px;
+  transform: scale(1.03);
 }
 .cta-gold {
   background-color: transparent;

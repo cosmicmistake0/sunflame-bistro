@@ -1,35 +1,30 @@
 import {
   cart,
+  syncCart,
   removeFromCart,
   increaseQuantity,
   decreaseQuantity,
 } from "./cart.js";
+
 import { menuItems } from "./menuitems.js";
-let shoppingCart = "";
-let subTotal = 0;
 
-cart.forEach((cartItem) => {
-  console.log(cartItem.productId);
-  console.log(menuItems);
-  const productId = cartItem.productId;
-  let matchingProduct;
-  menuItems.forEach((product) => {
-    if (product.id === productId) {
-      matchingProduct = product;
-    }
-  });
+// RENDER CART
 
-  // let totPrice;
+function renderCart() {
+  let shoppingCart = "";
 
-  // totPrice = cartItem.quantity * matchingProduct.price;
-  // subTotal += totPrice;
-  updateSubtotal();
-  console.log("cart product id:", productId);
-  console.log("matching product:", matchingProduct);
-  shoppingCart += `
-  <div class="item item-container-${matchingProduct.id}">
+  cart.forEach((cartItem) => {
+    const productId = cartItem.productId;
+
+    const matchingProduct = menuItems.find(
+      (product) => product.id === productId,
+    );
+
+    shoppingCart += `
+  <div class="item">
+
     <div class="image-checkout">
-      <img src="${matchingProduct.image}">
+      <img src="${matchingProduct.image}" alt="${matchingProduct.name}" />
     </div>
 
     <div class="name-checkout">
@@ -41,7 +36,8 @@ cart.forEach((cartItem) => {
     </div>
 
     <div class="quantity">
-      <button class="add-quantity"
+      <button
+        class="add-quantity"
         data-product-id="${matchingProduct.id}">
         +
       </button>
@@ -50,7 +46,8 @@ cart.forEach((cartItem) => {
         ${cartItem.quantity}
       </p>
 
-      <button class="subtract-quantity"
+      <button
+        class="subtract-quantity"
         data-product-id="${matchingProduct.id}">
         -
       </button>
@@ -63,61 +60,86 @@ cart.forEach((cartItem) => {
         x
       </button>
     </div>
+
   </div>
 `;
-});
-console.log(`${subTotal}  this is it`);
-document.querySelector(".shopping-cart").innerHTML = shoppingCart;
-console.log(shoppingCart);
-document.querySelectorAll(".delete-item").forEach((button) => {
-  button.addEventListener("click", () => {
-    const productId = button.dataset.productId;
-    removeFromCart(productId);
-    console.log(cart);
-    const container = document.querySelector(`.item-container-${productId}`);
-    container.remove();
-    updateSubtotal();
   });
-});
-document.querySelectorAll(".add-quantity").forEach((button) => {
-  button.addEventListener("click", () => {
-    const productId = button.dataset.productId;
 
-    increaseQuantity(productId);
+  document.querySelector(".shopping-cart").innerHTML = shoppingCart;
 
-    const item = cart.find((cartItem) => cartItem.productId === productId);
+  updateSubtotal();
 
-    const quantityElement = document.querySelector(`.quantity-${productId}`);
+  // PLUS BUTTON
 
-    quantityElement.textContent = item.quantity;
-    updateSubtotal();
+  document.querySelectorAll(".add-quantity").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.productId;
+
+      increaseQuantity(productId);
+
+      const item = cart.find((cartItem) => cartItem.productId === productId);
+
+      const quantityElement = document.querySelector(`.quantity-${productId}`);
+
+      quantityElement.textContent = item.quantity;
+
+      updateSubtotal();
+    });
   });
-});
-document.querySelectorAll(".subtract-quantity").forEach((button) => {
-  button.addEventListener("click", () => {
-    const productId = button.dataset.productId;
-    decreaseQuantity(productId);
-    const item = cart.find((cartItem) => cartItem.productId === productId);
 
-    const quantityElement = document.querySelector(`.quantity-${productId}`);
+  // MINUS BUTTON
 
-    quantityElement.textContent = item.quantity;
-    updateSubtotal();
+  document.querySelectorAll(".subtract-quantity").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.productId;
+
+      decreaseQuantity(productId);
+
+      const item = cart.find((cartItem) => cartItem.productId === productId);
+
+      const quantityElement = document.querySelector(`.quantity-${productId}`);
+
+      quantityElement.textContent = item.quantity;
+
+      updateSubtotal();
+    });
   });
-});
-cart.forEach((item) => {
-  item.quantity;
-});
+
+  // DELETE BUTTON
+
+  document.querySelectorAll(".delete-item").forEach((button) => {
+    button.addEventListener("click", () => {
+      const productId = button.dataset.productId;
+
+      removeFromCart(productId);
+
+      renderCart();
+    });
+  });
+}
+
+// SUBTOTAL
+
 export function updateSubtotal() {
   let subTotal = 0;
 
   cart.forEach((cartItem) => {
-    const matchingProduct = menuItems.find((product) => {
-      return product.id === cartItem.productId;
-    });
+    const matchingProduct = menuItems.find(
+      (product) => product.id === cartItem.productId,
+    );
 
     subTotal += cartItem.quantity * matchingProduct.price;
   });
 
   document.querySelector(".subtotal-number").textContent = `₦${subTotal}`;
 }
+
+// INITIAL RENDER
+
+renderCart();
+
+// HANDLE BACK / FORWARD
+
+window.addEventListener("pageshow", () => {
+  renderCart();
+});

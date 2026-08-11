@@ -31,8 +31,13 @@ export function render(products = []) {
       const productId = button.dataset.productId;
 
       addToCart(productId);
+      button.textContent = "ADDED";
 
+      setTimeout(() => {
+        button.textContent = "Add to Cart";
+      }, 700);
       console.log(cart);
+      console.log("ADDING:", productId);
     });
   });
 }
