@@ -25,6 +25,10 @@ function menuProduct(name, image, price, id) {
 
 function render(products = []) {
   const menuDom = document.querySelector(".menu-items-container");
+
+  if (!menuDom) return;
+
+  menuDom.innerHTML = products;
   menuDom.innerHTML = products
     .map((p) => menuProduct(p.name, p.image, p.price, p.id))
     .join("");
@@ -75,14 +79,9 @@ const dessert = document.getElementById("dessert");
 const snacks = document.getElementById("snacks");
 const all = document.getElementById("all");
 
-featured.addEventListener("click", () => featuredFilter());
-
-food.addEventListener("click", () => filterType("food"));
-
-drinks.addEventListener("click", () => filterType("drinks"));
-
-dessert.addEventListener("click", () => filterType("dessert"));
-
-snacks.addEventListener("click", () => filterType("snacks"));
-all.addEventListener("click", () => render(menuItems));
-// checkout page
+if (featured) featured.addEventListener("click", () => featuredFilter());
+if (food) food.addEventListener("click", () => filterType("food"));
+if (drinks) drinks.addEventListener("click", () => filterType("drinks"));
+if (dessert) dessert.addEventListener("click", () => filterType("dessert"));
+if (snacks) snacks.addEventListener("click", () => filterType("snacks"));
+if (all) all.addEventListener("click", () => render(menuItems));

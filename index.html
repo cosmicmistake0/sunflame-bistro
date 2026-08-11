@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src='cart.js'></script>
-     <script type='module' src='index.js'defer ></script>
-     <script  src='favitems.js'></script>
+    <script type="module" src="cart.js"></script>
+<script type="module" src="menu.js"></script>
+<script type="module" src="index.js"></script>
+<script type="module" src="favitems.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sunflame Bistro</title>
@@ -87,9 +88,99 @@
       <div class='hire-text'>
         <h2>Join The Family</h2>
         <p>If you're looking for a job where you can grow, learn and be part of a tight-knit team, look no further.</p>
-        <a href="job.html">
+        <a class='exception' href="job.html">
         <button class='cta-gold'>Apply Today</button></a>
       </div></div>
+     </section>
+     <section class='reservation'>
+      <div class='reservation-text'><h2>Reservation</h2>
+      <p>Book Your Table</p></div>
+      <div class="reservation-form-container">
+  <form class="reservation-form">
+
+    <div class="form-group">
+      <label for="fname">Full Name:</label>
+      <input
+        type="text"
+        name="fname"
+        id="fname"
+        placeholder="Your full name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="people">Number of People:</label>
+      <input
+        type="number"
+        name="people"
+        id="people"
+        min="1"
+        placeholder="e.g. 2"
+        required
+      />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="your@email.com"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input
+          type="tel"
+          name="phone"
+          id="phone"
+          placeholder="Your phone number"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="date">Date:</label>
+        <input
+          type="date"
+          name="date"
+          id="date"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="time">Time:</label>
+        <input
+          type="time"
+          name="time"
+          id="time"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea
+        name="message"
+        id="message"
+        rows="4"
+        placeholder="Your message"
+      ></textarea>
+    </div>
+
+    <button class='cta-gold reservation-btn' type="submit">Make Reservation</button>
+
+  </form>
+</div>
      </section>
     </main>
    <footer>
