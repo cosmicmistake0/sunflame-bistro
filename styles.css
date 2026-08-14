@@ -881,12 +881,15 @@ textarea {
   justify-content: space-between;
   color: var(--secondary-color);
 }
-.checkout-btn-container {
-  padding: 1rem;
-}
 
 .footer-checkout {
   margin-top: 4rem;
+}
+.checkout-btns-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
 }
 @media (min-width: 420px) {
   .footer-container {

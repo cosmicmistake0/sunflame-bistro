@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-   
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
@@ -18,23 +17,19 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
-   
   </head>
   <body>
-   <header>
+    <header>
       <nav>
-      
         <div class="logo"><img src="images/Sunflame Logo.png" alt="" /></div>
-          <div class="menu">
-           <div class="links-header">
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-             <li><a href="menu.html"> Menu</a></li>
-          <li> <a href="contactUs.html">Contact us</a></li> 
-           
-           
-          </ul>
-        </div>
+        <div class="menu">
+          <div class="links-header">
+            <ul>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="menu.html"> Menu</a></li>
+              <li><a href="contactUs.html">Contact us</a></li>
+            </ul>
+          </div>
           <!-- <a href=""><img src="icons/menu-svgrepo-com.svg" alt="" /> </a> -->
         </div>
         <div class="cart">
@@ -59,24 +54,33 @@
           </div>
           <div class="delete-checkout"><button>x</button></div>
         </div>
-      
-      
       </div>
-       <div class="subtotal-container"> <div class="subtotal"> 
+      <div class="subtotal-container">
+        <div class="subtotal">
           <p>subtotal:</p>
-          <p class='subtotal-number'></p>
-        </div></div>
-      <div class="checkout-btn-container">
-        <button class="cta-gold">checkout</button>
-       
+          <p class="subtotal-number"></p>
+        </div>
+      </div>
+
+      <div class="checkout-btns-container">
+        <div class="checkout-btn-container">
+          <button class="cta-gold">Checkout</button>
+        </div>
+
+        <div class="menu-btn-container">
+          <a href="index.html" class="exception">
+            <button class="cta-green">Back To Menu</button>
+          </a>
+        </div>
+      </div>
     </main>
-     <footer class='footer-checkout'>
+    <footer class="footer-checkout">
       <div class="footer-container">
         <button class="cta-green">Order Online</button>
         <p>Get in Touch</p>
         <div class="links-container">
           <ul>
-           <li><a href="index.html">Home Page</a></li>
+            <li><a href="index.html">Home Page</a></li>
             <li><a href="about.html">About Us</a></li>
             <a href="contactUs.html">Contact us</a>
             <li><a href="job.html">Apply for a position</a></li>
@@ -141,6 +145,6 @@
         </div>
       </div>
     </footer>
-     <script type='module' src='checkout.js'></script>
+    <script type="module" src="checkout.js"></script>
   </body>
 </html>
