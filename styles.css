@@ -818,6 +818,9 @@ textarea {
   padding: 1rem;
   gap: 1rem;
 }
+#whatsappCheckoutBtn {
+  width: fit-content;
+}
 .item {
   border-radius: 0.2rem;
 

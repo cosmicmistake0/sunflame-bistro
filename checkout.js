@@ -69,6 +69,35 @@ function renderCart() {
 
   updateSubtotal();
 
+  // WHATSAPP INTEGRATION
+  function orderViaWhatsApp() {
+    let message = `Hello, I'd like to place an order from SunFlame Bistro.\n\n`;
+
+    let total = 0;
+
+    cart.forEach((cartItem) => {
+      const matchingProduct = menuItems.find(
+        (product) => product.id === cartItem.productId,
+      );
+
+      const itemTotal = matchingProduct.price * cartItem.quantity;
+
+      total += itemTotal;
+
+      message += `${cartItem.quantity} × ${matchingProduct.name} — ₦${itemTotal.toLocaleString()}\n`;
+    });
+
+    message += `\nTotal: ₦${total.toLocaleString()}`;
+
+    const phoneNumber = "2348162952666";
+
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
+  }
+  const whatsappButton = document.getElementById("whatsappCheckoutBtn");
+  whatsappButton.addEventListener("click", orderViaWhatsApp);
+
   // PLUS BUTTON
 
   document.querySelectorAll(".add-quantity").forEach((button) => {
