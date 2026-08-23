@@ -894,6 +894,12 @@ textarea {
   flex-direction: row;
   gap: 1rem;
 }
+@media (min-width: 350px) {
+  .quantity,
+  .delete-checkout {
+    width: 2rem;
+  }
+}
 @media (min-width: 420px) {
   .footer-container {
     grid-template-areas:
