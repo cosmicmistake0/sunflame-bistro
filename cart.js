@@ -2,6 +2,7 @@ export let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 export function syncCart() {
   cart = JSON.parse(localStorage.getItem("cart")) || [];
+  updateCartQuantity();
 }
 
 window.addEventListener("pageshow", syncCart);
