@@ -818,6 +818,9 @@ textarea {
   padding: 1rem;
   gap: 1rem;
 }
+.back-to-menu-container {
+  padding: 1rem;
+}
 #whatsappCheckoutBtn {
   width: fit-content;
 }
@@ -884,12 +887,57 @@ textarea {
   justify-content: space-between;
   color: var(--secondary-color);
 }
+/* .form-container {
+  color: var(--primary-color);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.form-container input {
+  outline: none;
+  color: var(--secondary-color);
+  resize: none;
+  background-color: var(--primary-color);
+  font-size: var(--fs-md);
+  border: none;
+  /* background-color: var(--primary-color); */
+/* border-radius: 0 0.5rem 0 0.5rem;
+  padding: 0.8rem;
+  transition: all 0.2s ease;
+}  */
+.order-details {
+  padding: 1rem;
+}
 
+#orderForm {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  color: var(--secondary-color);
+  border: var(--primary-color) solid;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 .footer-checkout {
   margin-top: 4rem;
 }
+#orderForm textarea {
+  height: 8rem;
+}
+#orderForm input {
+  height: 3.5rem;
+  outline: none;
+  padding: 0.4rem;
+  color: var(--primary-color);
+  resize: none;
+  background-color: var(--pr);
+  font-size: var(--fs-md);
+  border: none;
+  background-color: var(--secondary-color);
+  border-radius: 0 0.5rem 0 0.5rem;
+}
 .checkout-btns-container {
-  padding: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -993,23 +1041,15 @@ textarea {
   .why-us-card {
     height: 5rem;
   }
-  /* .testimonial-slider-control {
-    position: absolute;
-    display: block;
-
-    width: 5rem;
-    height: 5rem;
-    bottom: 0;
-    left: 50%;
+  #orderForm {
+    border-radius: 2rem;
+    padding: 5rem;
+    color: var(--secondary-color);
+    border: var(--primary-color) solid;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  .swiper-button-prev {
-    position: absolute;
-    display: block;
-  }
-  .swiper-button-next {
-    position: absolute;
-    display: block;
-  } */
 }
 @media (min-width: 480px) {
   .quantity,
@@ -1130,6 +1170,10 @@ textarea {
   }
   .reservation-btn {
     width: 10rem;
+  }
+  .quantity,
+  .delete-checkout {
+    width: 4rem;
   }
 }
 @media (min-width: 1000px) {

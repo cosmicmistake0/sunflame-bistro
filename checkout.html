@@ -62,19 +62,68 @@
         </div>
       </div>
 
-      <div class="checkout-btns-container">
-        <div class="checkout-btn-container">
-          <button class="cta-gold" id="whatsappCheckoutBtn">
-            Order Via Whatsapp
-          </button>
-        </div>
+      <section class="order-details">
+        <h2>Order Details</h2>
 
-        <div class="menu-btn-container">
-          <a href="index.html" class="exception">
-            <button class="cta-green">Back To Menu</button>
-          </a>
-        </div>
-      </div>
+        <form id="orderForm">
+          <div class="form-group">
+            <label for="customerName">Full Name</label>
+            <input
+              type="text"
+              id="customerName"
+              name="customerName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="customerPhone">Phone Number</label>
+            <input
+              type="tel"
+              id="customerPhone"
+              name="customerPhone"
+              placeholder="08012345678"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="customerAddress">Delivery Address</label>
+            <textarea
+              id="customerAddress"
+              name="customerAddress"
+              placeholder="Enter your delivery address"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="orderNote">Additional Note</label>
+            <textarea
+              id="orderNote"
+              name="orderNote"
+              placeholder="Anything else you'd like us to know? (Optional)"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="checkout-btns-container">
+            <div class="checkout-btn-container">
+              <button type="submit" class="cta-gold" id="whatsappCheckoutBtn">
+                Order Via WhatsApp
+              </button>
+            </div>
+
+            <div class="menu-btn-container">
+              <a href="index.html" class="cta-green exception">
+                Back To Menu
+              </a>
+            </div>
+          </div>
+        </form>
+      </section>
     </main>
     <footer class="footer-checkout">
       <div class="footer-container">

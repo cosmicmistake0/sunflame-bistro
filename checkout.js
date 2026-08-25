@@ -70,8 +70,29 @@ function renderCart() {
   updateSubtotal();
 
   // WHATSAPP INTEGRATION
-  function orderViaWhatsApp() {
+
+  const orderForm = document.getElementById("orderForm");
+
+  orderForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const customerName = document.getElementById("customerName").value;
+    const customerPhone = document.getElementById("customerPhone").value;
+    const customerAddress = document.getElementById("customerAddress").value;
+    const orderNote = document.getElementById("orderNote").value;
+
     let message = `Hello, I'd like to place an order from SunFlame Bistro.\n\n`;
+
+    message += `CUSTOMER DETAILS\n`;
+    message += `Name: ${customerName}\n`;
+    message += `Phone: ${customerPhone}\n`;
+    message += `Address: ${customerAddress}\n`;
+
+    if (orderNote) {
+      message += `Note: ${orderNote}\n`;
+    }
+
+    message += `\nORDER DETAILS\n`;
 
     let total = 0;
 
@@ -94,9 +115,7 @@ function renderCart() {
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank");
-  }
-  const whatsappButton = document.getElementById("whatsappCheckoutBtn");
-  whatsappButton.addEventListener("click", orderViaWhatsApp);
+  });
 
   // PLUS BUTTON
 
