@@ -168,6 +168,26 @@ img {
 .links-header a {
   width: 7rem;
 }
+.cart a {
+  width: 2.4rem;
+}
+.cart {
+  position: relative;
+}
+.content-display {
+  display: flex;
+  padding: 0.2rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.6rem;
+  color: white;
+  bottom: 10%;
+  position: absolute;
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  background-color: red;
+}
 .hero-image img {
   filter: blur(1px);
   display: none;

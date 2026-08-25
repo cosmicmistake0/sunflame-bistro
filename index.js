@@ -1,6 +1,10 @@
 import { favItems } from "./favitems.js";
 
-import { cart, addToCart } from "./cart.js";
+import { cart, addToCart, updateCartQuantity } from "./cart.js";
+const totQuantity = "";
+cart.forEach((cart) => {
+  totQuantity;
+});
 
 function favProduct(name, image, price, id) {
   return `
